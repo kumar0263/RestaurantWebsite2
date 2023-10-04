@@ -1,0 +1,337 @@
+* {
+  padding: 0;
+  margin: 0;
+  background: #fff;
+  box-sizing: border-box;
+}
+header {
+  background: var(--white-900, #fff);
+}
+li {
+  list-style: none;
+}
+
+a {
+  color: #253d4e;
+  text-decoration: none;
+}
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+.nav-link {
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  transition: 0.7s ease;
+}
+.nav-link:hover {
+  color: #509e2f;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all o.3s ease-in-out;
+  background-color: #000;
+}
+.userlogo {
+  width: 42px;
+  height: 42px;
+  border-radius: 42px;
+  background: url(<path-to-image>),
+    lightgray 0px -4.718px / 100% 177.778% no-repeat, #fcac1f;
+  /* margin-right: 30px; */
+}
+
+.mainfoodlogo {
+  width: 1264px;
+  height: 355px;
+  flex-shrink: 0;
+  margin-top: 30px;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #252525 -16.65%, rgba(0, 0, 0, 0) 100%),
+    url(<path-to-image>), lightgray 50% / cover no-repeat;
+}
+.content {
+  margin-left: 120px;
+}
+.Searchrecipes {
+  margin-top: 20px;
+  color: #252525;
+  font-family: Poppins;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.inputting {
+  position: relative;
+  display: flex;
+  width: 1225px;
+  height: 42px;
+  padding: 12px;
+  align-items: center;
+  gap: 7px;
+  flex-shrink: 0;
+  border-radius: 2px 0px 0px 2px;
+  background: #f3f3f3;
+}
+.magnifyinglens {
+  position: absolute;
+}
+.categories {
+  display: flex;
+  justify-content: left;
+  gap: 25px;
+  margin-top: 25px;
+}
+.btn {
+  display: flex;
+  width: 236.8px;
+  height: 86px;
+  padding: 30px 29.8px 30px 29px;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+}
+#allrecipes {
+  border-radius: 10px;
+  background: #eaaa00;
+}
+#vegrecipes {
+  border-radius: 10px;
+  background: #c4d600;
+}
+#nonvegrecipes {
+  border-radius: 10px;
+  background: #dc582a;
+}
+.searchbar {
+  margin-top: 20px;
+}
+.filters {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  gap: 25px;
+}
+.filhead {
+  color: #252525;
+  font-family: Poppins;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.rating {
+  display: flex;
+  padding: 15px 12px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+.ratingpar {
+  color: #252525;
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.chkbox {
+  display: flex;
+  gap: 7px;
+}
+.chkbox input[type="checkbox"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background-color: white;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+}
+.chkbox input[type="checkbox"]:checked {
+  background-color: green;
+  border-color: green;
+}
+.jscontent {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 20px;
+  grid-row-gap: 20px;
+  grid-column-gap: 20px;
+  margin-left: 200px;
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    gap: 0;
+    flex-direction: column;
+    background-color: #fff;
+    width: 40%;
+    text-align: left;
+    transition: 0.3s;
+  }
+  .nav-item {
+    margin: 16px 0;
+  }
+  .nav-menu.active {
+    left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .jscontent {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .jscontent {
+    grid-template-columns: 1fr;
+  }
+}
+
+.recipe-card img {
+  width: 289px;
+  height: 200px;
+  border-radius: 16px;
+  background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+}
+.dynamiccontent {
+  display: flex;
+  flex-direction: row;
+  align-self: auto;
+  gap: 30px;
+}
+.Ending {
+  display: flex;
+  width: 1440px;
+  height: 466px;
+  padding: 80px 70px 40px 70px;
+  align-items: left;
+  justify-content: left;
+  gap: 120px;
+}
+
+.About {
+  display: flex;
+  flex-direction: column;
+}
+.foodlogo {
+  width: 96px;
+  height: 46px;
+  flex-shrink: 0;
+}
+.cookpalpara {
+  color: #253d4e;
+  text-align: justify;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 290px;
+}
+.company {
+  display: flex;
+  flex-direction: column;
+}
+.company p {
+  color: #253d4e;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 26px;
+}
+.footerlist li {
+  padding: 18px;
+}
+.resources {
+  display: flex;
+  flex-direction: column;
+}
+.resources p {
+  color: #253d4e;
+  font-family: Archivo;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 26px;
+}
+.footerresources li {
+  padding: 18px;
+}
+.companyinfo {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.subscr {
+  color: var(--purple-05, #fcfaff);
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.16);
+
+  /* Archivo/Body/Button */
+  font-family: Archivo;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 125% */
+  letter-spacing: 0.32px;
+  background-color: green;
+  padding: 12px;
+  gap: 6px;
+}
+
+.emailbtn{
+margin: 12px 16px;
+}
+
+.socialmedia{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
